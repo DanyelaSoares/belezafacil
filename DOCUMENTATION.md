@@ -1,88 +1,84 @@
 # Documentação do Sistema: Beleza Fácil 💇‍♀️💅🧖‍♀️
 
 ## 1. Visão Geral
-
-O sistema de agendamento de salão é uma aplicação para gerenciar atendimentos de serviços de cabelo, unhas e depilação.  
-Permite o cadastro de clientes, funcionários, serviços, horários de atendimento e pagamentos, com notificações e relatórios básicos.
+O **Beleza Fácil** é um sistema para gerenciamento de salão de beleza, desenvolvido em Java, que permite organizar serviços de cabelo, unhas e depilação.  
+O sistema gerencia horários de atendimento, clientes, funcionários, serviços e pagamentos, facilitando o controle diário do salão.  
 
 ---
 
 ## 2. Objetivo do Sistema
-
-Permitir que o salão organize seus atendimentos de forma eficiente, garantindo:  
-- Controle de horários e disponibilidade de funcionários  
-- Registro de clientes e histórico de atendimentos  
-- Gerenciamento de serviços, preços e durações  
-- Registro de pagamentos com diferentes métodos  
-- Notificações e lembretes para clientes e funcionários  
+Permitir que o usuário (salão/gerente) organize de forma prática e eficiente:  
+- Cadastro de clientes e histórico de atendimentos  
+- Serviços oferecidos com preço e duração específicos  
+- Funcionários com especialidades  
+- Agendamento de serviços  
+- Notificações ou lembretes para clientes e funcionários  
+- Registro de pagamentos via PIX/Qrcode  
+- Relatórios diários de atendimentos e pagamentos  
 
 ---
 
 ## 3. Regras de Negócio
-
-1. O sistema deve gerenciar clientes, serviços, funcionários, horários de atendimento e pagamentos.  
-2. Cada serviço possui preço e duração específicos.  
-3. Serviços podem ser combinados em um único atendimento.  
-4. O sistema deve controlar a disponibilidade dos funcionários, bloqueando horários já agendados.  
-5. Pagamentos devem ser registrados e possibilitar relatórios diários.  
-6. Notificações devem ser enviadas para clientes e funcionários sobre agendamentos futuros.
+1. O sistema deve gerenciar três áreas: cabelo, unhas e depilação.  
+2. Cada serviço possui **preço e duração específicos**.  
+3. Serviços podem ser combinados em um único agendamento.  
+4. Cada cliente deve ter cadastro com **nome, telefone, WhatsApp e histórico de atendimentos**.  
+5. Funcionários possuem **nome, especialidade e WhatsApp**.  
+6. Notificações ou lembretes devem ser enviados a clientes e funcionários antes do horário do agendamento.  
+7. Pagamentos podem ser realizados via **PIX/Qrcode** e devem ser registrados no sistema para controle e relatório.  
 
 ---
 
 ## 4. Requisitos Funcionais (RF)
-
-- **RF01:** Cadastrar clientes com nome, telefone, WhatsApp e histórico de atendimentos.  
-- **RF02:** Cadastrar serviços com preço, duração e possibilidade de combinação de serviços.  
-- **RF03:** Cadastrar funcionários com nome, especialidade e WhatsApp.  
-- **RF04:** Agendar horários de atendimento vinculando cliente, serviço(s) e funcionário.  
-- **RF05:** Bloquear horários já agendados para evitar conflitos.  
-- **RF06:** Registrar pagamentos via QR Code ou Pix, com valor, forma e data.  
-- **RF07:** Gerar relatório diário de pagamentos realizados.  
-- **RF08:** Enviar notificações e lembretes sobre agendamentos para clientes e funcionários.
+- **RF01:** Cadastro de clientes (nome, telefone, WhatsApp, histórico)  
+- **RF02:** Cadastro de funcionários (nome, especialidade, WhatsApp)  
+- **RF03:** Cadastro de serviços (nome, preço, duração, área)  
+- **RF04:** Agendamento de serviços, com possibilidade de combinar múltiplos serviços  
+- **RF05:** Notificação ou lembrete para clientes e funcionários sobre o agendamento  
+- **RF06:** Registro de pagamentos com PIX/Qrcode  
+- **RF07:** Geração de relatórios diários de atendimentos e pagamentos  
 
 ---
 
 ## 5. Requisitos Não Funcionais (RNF)
-
-- **RNF01:** O sistema deve ser fácil de usar e intuitivo.  
-- **RNF02:** Deve ser compatível com Java (versão 8 ou superior).  
-- **RNF03:** Mensagens do sistema devem ser claras e amigáveis.  
-- **RNF04:** O desempenho deve ser rápido, mesmo com múltiplos agendamentos simultâneos.  
+- **RNF01:** Sistema deve rodar no terminal (sem GUI, inicialmente)  
+- **RNF02:** Compatível com Java 8 ou superior  
+- **RNF03:** Mensagens do sistema claras e amigáveis  
+- **RNF04:** Desempenho rápido mesmo com múltiplos agendamentos e clientes cadastrados  
 
 ---
 
 ## 6. Fluxo do Usuário / Casos de Uso
-
-**Caso de Uso: Agendar Atendimento**  
-
-1. O usuário (funcionário ou administrador) acessa o sistema.  
-2. O sistema solicita os dados do cliente ou permite selecionar cliente existente.  
-3. O usuário seleciona o(s) serviço(s) desejado(s).  
-4. O sistema exibe horários disponíveis do funcionário selecionado.  
-5. O usuário escolhe o horário desejado.  
-6. O sistema confirma o agendamento, registra o atendimento e envia notificações ao cliente e funcionário.  
-7. Após o atendimento, o pagamento é registrado no sistema.  
+**Caso de Uso: Agendar Serviço**  
+1. Usuário acessa o sistema.  
+2. Sistema lista serviços disponíveis e funcionários.  
+3. Usuário escolhe cliente ou cadastra novo cliente.  
+4. Usuário seleciona serviço(s) e funcionário responsável.  
+5. Sistema verifica disponibilidade de horário.  
+6. Agendamento confirmado, sistema envia notificação/lembrete.  
+7. Após serviço concluído, usuário registra pagamento (PIX/Qrcode) e atualiza histórico do cliente.  
 
 ---
 
-## 7. Tecnologias Utilizadas
-
-* Java (JDK 8+)  
-* Banco de dados: MySQL  
-* Terminal / Interface gráfica (GUI futura)  
+## 7. Possíveis Melhorias Futuras
+- Interface gráfica (GUI) para facilitar o uso  
+- Integração com agenda de calendário (Google Calendar, Outlook)  
+- Sistema de fidelidade ou descontos para clientes frequentes  
+- Multiusuário com permissões (recepcionista, gerente)  
+- Integração com banco de dados externo  
 
 ---
 
-## 8. Possíveis Melhorias Futuras
-
-* Implementar interface gráfica (GUI) para facilitar o uso.  
-* Suporte a múltiplos salões e funcionários adicionais.  
-* Integração com WhatsApp ou SMS para envio automático de lembretes.  
-* Histórico detalhado de pagamentos e atendimentos com gráficos e relatórios avançados.  
-* Implementar sistema de fidelidade ou promoções para clientes frequentes.  
+## 8. Tecnologias Utilizadas
+- Java (JDK 8+)  
+- Terminal / Prompt de Comando  
 
 ---
 
 ## 9. Autor
+**Daniela Soares** — Estudante de Análise de Requisitos e Desenvolvedora em aprendizado  
 
-* Daniela Soares — Estudante de Análise de Requisitos e Desenvolvedora em aprendizado
+---
+
+## 10. Documentação Completa
+Para detalhes adicionais, fluxos detalhados e regras futuras, consulte: [DOCUMENTATION.md](#)  
