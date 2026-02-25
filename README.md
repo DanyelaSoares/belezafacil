@@ -1,53 +1,62 @@
-# 💇‍♀️ Beleza Fácil — Sistema de Agendamento de Salão
+# Beleza Fácil — Sistema de Agendamento de Salão
 
-![Status](https://img.shields.io/badge/Status-Em%20desenvolvimento-yellow?style=for-the-badge)
+![Status](https://img.shields.io/badge/Status-Em%20definição%20funcional-blue?style=for-the-badge)
 
-**Beleza Fácil** é um sistema desenvolvido em Java para gerenciar agendamentos de salão de beleza, incluindo serviços de cabelo, unhas e depilação, com controle de clientes, funcionários e pagamentos.
-
----
-
-## 🧠 Sobre o sistema
-
-- Gerencia **clientes** com nome, telefone, WhatsApp e histórico de atendimentos.  
-- Gerencia **funcionários**, suas especialidades e contatos.  
-- Controle de **serviços** (ex.: corte de cabelo tesoura, manicure, pedicure, depilação, tingimento), com preço e duração específicos.  
-- Permite **agendamento de serviços combinados**.  
-- Registro de **pagamentos** via QR Code/PIX e geração de relatórios diários.  
-- **Notificações ou lembretes** para clientes e funcionários sobre os agendamentos.  
+Beleza Fácil é um sistema concebido para gerenciar agendamentos e operações de um salão de beleza, incluindo controle de clientes, profissionais, serviços e pagamentos.
 
 ---
 
-## 🚀 Tecnologias previstas
+## 🧠 Visão do Sistema
 
-- Java (JDK 8+)
-- Banco de dados (MySQL ou PostgreSQL)
-- Terminal / Interface gráfica futura (GUI opcional)
+O sistema foi idealizado para resolver necessidades comuns de gestão em salões de beleza, permitindo:
 
----
-
-## 📌 Funcionalidades iniciais
-
-- Cadastro e gerenciamento de clientes
-- Cadastro e gerenciamento de funcionários
-- Cadastro de serviços com preço e duração
+- Gerenciamento de clientes e histórico de atendimentos
+- Gerenciamento de profissionais e especialidades
+- Controle de serviços com preço e duração
 - Agendamento de serviços individuais ou combinados
-- Registro de pagamentos e geração de relatórios
-- Notificações para clientes e funcionários
+- Registro de pagamentos
+- Geração de relatórios operacionais
 
 ---
 
-## 📚 Documentação Completa
+## 🎯 Objetivo do Projeto
 
-Para detalhes sobre regras de negócio, requisitos funcionais e não funcionais, fluxo do usuário e casos de uso, consulte: `DOCUMENTATION.md`
+Este projeto tem como foco a prática de:
+
+- Análise de requisitos
+- Modelagem de regras de negócio
+- Estruturação de sistemas
+- Representação de comportamentos e fluxos
 
 ---
 
-## 👩‍💻 Autora
+## 🚀 Tecnologias Previstas
 
-**Daniela Soares** — Estudante de Análise de Requisitos e Desenvolvedora em aprendizado
+- Java
+- Banco de Dados Relacional (MySQL ou PostgreSQL)
+- Interface futura (CLI / GUI)
 
 ---
 
-## 📄 Licença
+## 📌 Escopo Funcional Inicial
 
-Este projeto está licenciado sob a licença MIT — veja o arquivo LICENSE para mais detalhes.
+- Cadastro de clientes
+- Cadastro de profissionais
+- Cadastro de serviços
+- Agendamento de atendimentos
+- Registro de pagamentos
+- Relatórios básicos
+
+---
+
+## 📚 Documentação
+
+Detalhes sobre regras de negócio, requisitos e fluxos estão disponíveis em:
+
+👉 DOCUMENTATION.md
+
+---
+
+## 👩‍💻 Autoria
+
+Daniela Soares
