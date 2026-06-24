@@ -1,21 +1,16 @@
-# Beleza Fácil — Sistema de Agendamento de Salão
+# Beleza Fácil — App Mobile de Agendamento para Salões
 
-![Status](https://img.shields.io/badge/Status-Em%20definição%20funcional-blue?style=for-the-badge)
+![Status](https://img.shields.io/badge/Status-Em%20Desenvolvimento-green?style=for-the-badge)
 
-Beleza Fácil é um sistema concebido para gerenciar agendamentos e operações de um salão de beleza, incluindo controle de clientes, profissionais, serviços e pagamentos.
+O **Beleza Fácil** é um aplicativo mobile desenvolvido para facilitar o agendamento de serviços em salões de beleza. A plataforma permite que clientes visualizem serviços disponíveis, realizem agendamentos e acompanhem seus atendimentos de forma simples e prática.
 
 ---
 
-## 🧠 Visão do Sistema
+## 🧠 Visão do Projeto
 
-O sistema foi idealizado para resolver necessidades comuns de gestão em salões de beleza, permitindo:
+O projeto foi idealizado para solucionar problemas comuns enfrentados por salões e clientes, como dificuldades de agendamento, controle de horários e organização dos atendimentos.
 
-- Gerenciamento de clientes e histórico de atendimentos
-- Gerenciamento de profissionais e especialidades
-- Controle de serviços com preço e duração
-- Agendamento de serviços individuais ou combinados
-- Registro de pagamentos
-- Geração de relatórios operacionais
+O aplicativo busca oferecer uma experiência intuitiva para os clientes e uma gestão mais eficiente dos serviços oferecidos.
 
 ---
 
@@ -23,40 +18,126 @@ O sistema foi idealizado para resolver necessidades comuns de gestão em salões
 
 Este projeto tem como foco a prática de:
 
-- Análise de requisitos
-- Modelagem de regras de negócio
-- Estruturação de sistemas
-- Representação de comportamentos e fluxos
+* Desenvolvimento Mobile
+* Desenvolvimento Backend
+* APIs REST
+* Autenticação com JWT
+* Banco de Dados Relacional
+* Testes de API
+* Modelagem de Dados
+* Versionamento com Git e GitHub
 
 ---
 
-## 🚀 Tecnologias Previstas
+## 📱 Funcionalidades da Versão 1 (MVP)
 
-- Java
-- Banco de Dados Relacional (MySQL ou PostgreSQL)
-- Interface futura (CLI / GUI)
+### Clientes
+
+* Cadastro de usuário
+* Login seguro
+* Visualização de serviços disponíveis
+* Agendamento de serviços
+* Consulta de agendamentos
+* Cancelamento de agendamentos
 
 ---
 
-## 📌 Escopo Funcional Inicial
+## 🚀 Tecnologias Utilizadas
 
-- Cadastro de clientes
-- Cadastro de profissionais
-- Cadastro de serviços
-- Agendamento de atendimentos
-- Registro de pagamentos
-- Relatórios básicos
+### Mobile
+
+* React Native
+* Expo
+* TypeScript
+
+### Backend
+
+* Java 17
+* Spring Boot
+* Spring Security
+* JWT
+* JPA / Hibernate
+
+### Banco de Dados
+
+* MySQL
+
+### Ferramentas
+
+* Git
+* GitHub
+* Postman
+* MySQL Workbench
+
+---
+
+## 🗄 Modelo de Dados
+
+### 📌 Entidade User
+
+| Campo | Tipo   |
+| ----- | ------ |
+| id    | Long   |
+| nome  | String |
+| email | String |
+| senha | String |
+
+---
+
+### 📌 Entidade Service
+
+| Campo          | Tipo    |
+| -------------- | ------- |
+| id             | Long    |
+| nome           | String  |
+| descricao      | String  |
+| preco          | Decimal |
+| duracaoMinutos | Integer |
+
+---
+
+### 📌 Entidade Appointment
+
+| Campo    | Tipo          |
+| -------- | ------------- |
+| id       | Long          |
+| dataHora | LocalDateTime |
+| status   | Enum          |
+| user     | User          |
+| service  | Service       |
+
+---
+
+## 📌 Escopo Futuro
+
+Funcionalidades previstas para próximas versões:
+
+* Cadastro de profissionais
+* Especialidades dos profissionais
+* Pagamentos
+* Histórico de atendimentos
+* Avaliações dos serviços
+* Notificações de agendamento
+* Relatórios gerenciais
 
 ---
 
 ## 📚 Documentação
 
-Detalhes sobre regras de negócio, requisitos e fluxos estão disponíveis em:
+Detalhes sobre regras de negócio, requisitos e diagramas estarão disponíveis em:
 
 👉 DOCUMENTATION.md
 
 ---
 
+## 📈 Status do Projeto
+
+Em fase inicial de modelagem e desenvolvimento.
+
+---
+
 ## 👩‍💻 Autoria
 
-Daniela Soares
+**Daniela Soares**
+
+Estudante de Engenharia de Software e Analista de Sistemas.
