@@ -383,3 +383,5 @@ O projeto encontra-se atualmente na etapa de levantamento de requisitos, modelag
 **Daniela Soares**
 
 Projeto desenvolvido para estudos e prática de desenvolvimento de sistemas, análise de requisitos, desenvolvimento backend, frontend, testes e modelagem de software.
+
+O código e a documentação deste repositório são de autoria de **Daniela Soares**.
