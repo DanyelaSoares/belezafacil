@@ -543,7 +543,7 @@ BelezaFacil/
 │
 ├── docs/
 │   ├── requisitos.md
-│   ├── regras-de-negocio.md
+│   ├── regras_de_negocio.md
 │   ├── casos-de-uso.md
 │   ├── modelagem.md
 │   ├── arquitetura.md
