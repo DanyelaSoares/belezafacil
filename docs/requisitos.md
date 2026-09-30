@@ -1,4 +1,4 @@
-# 📋 Levantamento de Requisitos — Beleza Fácil
+# 📋 Requisitos do Sistema — Beleza Fácil
 
 ## 1. Identificação do Projeto
 
@@ -6,57 +6,67 @@
 **Tipo:** Sistema Web Responsivo de Agendamento para Salões de Beleza  
 **Status:** Em desenvolvimento
 
-O Beleza Fácil é um sistema web desenvolvido para auxiliar na organização de salões de beleza, permitindo o gerenciamento de clientes, profissionais, serviços, horários e agendamentos.
+O **Beleza Fácil** é um sistema web destinado a auxiliar na organização de salões de beleza, permitindo o gerenciamento de clientes, profissionais, serviços, horários e agendamentos.
 
 A aplicação será acessada por meio de um link e deverá funcionar em dispositivos móveis e computadores.
 
-O sistema também contará com integração com o WhatsApp para envio de confirmações, lembretes e comunicações relacionadas aos agendamentos.
+O sistema também contará com integração com o WhatsApp para comunicação relacionada aos agendamentos e divulgação de informações.
 
 ---
 
 # 2. Objetivo do Sistema
 
-O sistema tem como objetivo facilitar o processo de agendamento e gerenciamento de serviços de um salão de beleza, permitindo:
+O sistema tem como objetivo facilitar o processo de agendamento e gerenciamento dos serviços de um salão de beleza.
 
-- Que clientes realizem e acompanhem seus agendamentos;
-- Que clientes consultem seu histórico de atendimentos;
-- Que clientes possam cancelar ou reagendar dentro das regras estabelecidas;
-- Que profissionais acompanhem e gerenciem os atendimentos;
-- Que a administradora gerencie profissionais, serviços e disponibilidade;
-- Que o sistema controle automaticamente os conflitos de horários;
-- Que sejam enviados avisos e lembretes por WhatsApp;
-- Que a administradora tenha acesso a informações e relatórios do salão.
+O Beleza Fácil deverá permitir:
+
+- Cadastro e autenticação de clientes;
+- Cadastro e autenticação de profissionais;
+- Gerenciamento de profissionais;
+- Gerenciamento de serviços;
+- Gerenciamento de horários e disponibilidade;
+- Realização de agendamentos;
+- Consulta de agendamentos;
+- Cancelamento de agendamentos;
+- Reagendamento de atendimentos;
+- Consulta do histórico de atendimentos;
+- Registro da situação dos atendimentos;
+- Gerenciamento de promoções;
+- Consulta de informações gerenciais;
+- Comunicação com clientes por meio do WhatsApp.
 
 ---
 
 # 3. Perfis de Acesso
 
-O sistema possuirá três funções principais:
+O sistema deverá possuir três funções principais:
 
 - Cliente;
 - Profissional;
 - Administradora.
 
-Uma mesma pessoa poderá possuir mais de uma função.
+Uma mesma conta poderá possuir mais de uma função.
 
 ### Exemplo
 
-A dona do salão poderá possuir simultaneamente:
+A responsável pelo salão poderá possuir simultaneamente as funções de:
 
 - Administradora;
 - Profissional.
 
-Dessa forma, ela poderá administrar o salão e também realizar atendimentos.
+O sistema deverá disponibilizar as funcionalidades correspondentes às funções atribuídas à conta.
 
 ---
 
-# 4. Cliente
+# 4. Requisitos Funcionais
 
-## 4.1 Cadastro
+## 4.1 Cadastro e autenticação
 
-A cliente deverá poder criar sua própria conta no sistema.
+### RF001 — Cadastro de cliente
 
-O cadastro deverá permitir informações como:
+O sistema deve permitir que a cliente crie sua própria conta.
+
+O cadastro deverá contemplar, no mínimo:
 
 - Nome;
 - Telefone;
@@ -64,21 +74,41 @@ O cadastro deverá permitir informações como:
 - E-mail;
 - Senha.
 
-O e-mail será opcional.
+O e-mail poderá ser opcional.
 
 ---
 
-## 4.2 Login
+### RF002 — Autenticação da cliente
 
-A cliente deverá possuir acesso autenticado ao sistema.
-
-Após realizar o login, deverá ter acesso às funcionalidades relacionadas à sua própria conta e aos seus agendamentos.
+O sistema deve permitir que a cliente realize login para acessar sua conta e as funcionalidades destinadas ao seu perfil.
 
 ---
 
-## 4.3 Dados Cadastrais
+### RF003 — Cadastro de profissional
 
-A cliente poderá alterar seus próprios dados cadastrais, incluindo:
+O sistema deve permitir que a administradora cadastre profissionais.
+
+---
+
+### RF004 — Autenticação da profissional
+
+O sistema deve permitir que a profissional possua login próprio para acesso ao sistema.
+
+---
+
+### RF005 — Acesso administrativo
+
+O sistema deve permitir que contas com função de administradora acessem as funcionalidades de gerenciamento do salão.
+
+---
+
+# 5. Gerenciamento de Dados Cadastrais
+
+## RF006 — Alteração dos dados da cliente
+
+O sistema deve permitir que a cliente altere seus próprios dados cadastrais.
+
+Os dados poderão incluir:
 
 - Nome;
 - Telefone;
@@ -86,183 +116,33 @@ A cliente poderá alterar seus próprios dados cadastrais, incluindo:
 - E-mail;
 - Senha.
 
-A cliente não poderá alterar informações referentes aos serviços, profissionais ou configurações do salão.
+---
+
+## RF007 — Gerenciamento de profissionais
+
+O sistema deve permitir que a administradora:
+
+- Cadastre profissionais;
+- Altere dados das profissionais;
+- Ative profissionais;
+- Inative profissionais;
+- Defina os serviços que cada profissional pode realizar;
+- Defina horários de trabalho;
+- Defina dias de trabalho;
+- Defina folgas.
 
 ---
 
-## 4.4 Agendamento
-
-A cliente poderá realizar um novo agendamento.
-
-Para isso, deverá:
-
-1. Escolher o serviço;
-2. Escolher a profissional;
-3. Escolher a data;
-4. Escolher um horário disponível;
-5. Confirmar o agendamento.
-
-O sistema deverá apresentar somente profissionais habilitadas para realizar o serviço selecionado.
-
----
-
-## 4.5 Visualização de Horários
-
-A cliente poderá consultar os horários disponíveis para o serviço e profissional selecionados.
-
-A cliente não deverá visualizar:
-
-- Nome de outras clientes;
-- Serviços agendados por outras clientes;
-- Informações pessoais de outras clientes.
-
-A cliente deverá visualizar somente a disponibilidade da agenda.
-
-O sistema poderá apresentar o próximo horário disponível e também permitir que a cliente consulte o calendário para visualizar outros horários disponíveis.
-
----
-
-## 4.6 Histórico
-
-A cliente deverá possuir acesso ao histórico de seus atendimentos.
-
-O histórico deverá permitir a consulta de informações como:
-
-- Data;
-- Horário;
-- Serviço;
-- Profissional;
-- Valor;
-- Status do atendimento.
-
----
-
-## 4.7 Cancelamento
-
-A cliente poderá cancelar seu próprio agendamento somente com antecedência mínima de 24 horas.
-
-Após o prazo de 24 horas, a cliente não poderá realizar o cancelamento diretamente pelo sistema.
-
-Nesse caso, deverá existir a possibilidade de solicitar alteração ao salão por meio do canal de comunicação disponibilizado.
-
-Quando um agendamento for cancelado pela cliente, o horário deverá ser liberado novamente para novos agendamentos.
-
----
-
-## 4.8 Reagendamento
-
-A cliente poderá reagendar seu atendimento desde que respeite a antecedência mínima de 24 horas.
-
-O novo horário deverá passar novamente pela validação de disponibilidade do sistema.
-
-O sistema não deverá permitir que o novo agendamento gere conflito com outro atendimento.
-
----
-
-# 5. Profissional
-
-## 5.1 Login
-
-A profissional deverá possuir login próprio para acesso ao sistema.
-
----
-
-## 5.2 Agenda
-
-A profissional poderá visualizar a agenda de todas as profissionais cadastradas no salão.
-
-A visualização da agenda deverá apresentar informações necessárias para o gerenciamento dos atendimentos.
-
----
-
-## 5.3 Agendamento
-
-A profissional poderá realizar agendamentos para clientes.
-
-O agendamento deverá respeitar as mesmas regras de disponibilidade utilizadas para os agendamentos realizados pelas clientes.
-
----
-
-## 5.4 Cancelamento e Reagendamento
-
-A profissional poderá:
-
-- Desmarcar agendamentos;
-- Reagendar atendimentos.
-
-O sistema deverá registrar a alteração realizada.
-
----
-
-## 5.5 Status do Atendimento
-
-A profissional poderá informar o resultado do atendimento.
-
-O atendimento poderá ser marcado como:
-
-- Realizado;
-- Não realizado.
-
----
-
-## 5.6 Restrições
-
-A profissional não poderá:
-
-- Cadastrar outras profissionais;
-- Alterar profissionais;
-- Cadastrar serviços;
-- Alterar serviços;
-- Alterar preços;
-- Alterar duração dos serviços;
-- Fechar datas;
-- Abrir datas;
-- Bloquear horários;
-- Liberar horários;
-- Gerenciar promoções;
-- Emitir relatórios gerenciais.
-
-Essas funcionalidades pertencem à administradora.
-
----
-
-# 6. Administradora
-
-A administradora será responsável pelo gerenciamento do salão.
-
-A administradora poderá também possuir a função de profissional.
-
----
-
-## 6.1 Profissionais
-
-A administradora poderá:
-
-- Cadastrar profissionais;
-- Alterar dados das profissionais;
-- Ativar profissionais;
-- Inativar profissionais;
-- Definir os serviços que cada profissional pode realizar;
-- Definir horários de trabalho;
-- Definir dias de trabalho;
-- Definir folgas.
-
-Uma profissional poderá realizar vários serviços.
-
-Um mesmo serviço poderá ser realizado por várias profissionais.
-
----
-
-## 6.2 Serviços
-
-A administradora poderá:
-
-- Cadastrar serviços;
-- Alterar serviços;
-- Alterar preços;
-- Alterar duração;
-- Ativar serviços;
-- Inativar serviços.
+## RF008 — Gerenciamento de serviços
+
+O sistema deve permitir que a administradora:
+
+- Cadastre serviços;
+- Altere serviços;
+- Altere preços;
+- Altere duração dos serviços;
+- Ative serviços;
+- Inative serviços.
 
 Cada serviço deverá possuir, no mínimo:
 
@@ -274,89 +154,186 @@ Cada serviço deverá possuir, no mínimo:
 
 ---
 
-## 6.3 Alteração de Preços
+# 6. Agendamento
 
-A alteração do preço de um serviço não deverá modificar os valores registrados em atendimentos anteriores.
+## RF009 — Consulta de serviços
 
-O valor praticado no atendimento deverá permanecer registrado no histórico.
-
----
-
-## 6.4 Alteração de Duração
-
-A administradora poderá alterar a duração de um serviço desde que a alteração não gere conflito com agendamentos existentes.
-
-Caso a nova duração gere conflito com outro atendimento já agendado, a alteração deverá ser impedida até que o conflito seja solucionado por meio de cancelamento ou reagendamento do atendimento afetado.
+O sistema deve permitir que a cliente consulte os serviços disponibilizados pelo salão.
 
 ---
 
-# 7. Agenda do Salão
+## RF010 — Seleção de profissional
 
-## 7.1 Horário de Funcionamento
+O sistema deve permitir que a cliente selecione uma profissional para realizar o serviço escolhido.
 
-O horário de funcionamento inicialmente previsto para o salão será:
-
-**09:00 às 21:00.**
-
-Essa configuração deverá ser administrável conforme as necessidades do salão.
+O sistema deverá apresentar somente profissionais habilitadas para realizar o serviço selecionado.
 
 ---
 
-## 7.2 Intervalos entre Atendimentos
+## RF011 — Consulta de disponibilidade
 
-Não haverá intervalo obrigatório entre atendimentos.
+O sistema deve permitir que a cliente consulte os horários disponíveis para determinado serviço, profissional e data.
 
-Um atendimento poderá iniciar imediatamente após o término do atendimento anterior, desde que o horário esteja disponível.
-
----
-
-## 7.3 Unidade de Horário
-
-O sistema deverá trabalhar com intervalos mínimos de 15 minutos para cálculo da disponibilidade.
-
-Os horários poderão ser apresentados, por exemplo:
-
-- 09:00;
-- 09:15;
-- 09:30;
-- 09:45;
-- 10:00.
-
-A duração do serviço determinará o período total ocupado na agenda.
+A cliente deverá visualizar somente a disponibilidade da agenda, sem acesso às informações pessoais ou aos agendamentos de outras clientes.
 
 ---
 
-# 8. Duração dos Serviços
+## RF012 — Realização de agendamento
 
-Cada serviço deverá possuir uma duração própria.
+O sistema deve permitir que a cliente realize um agendamento mediante seleção de:
 
-Os serviços poderão possuir durações diferentes, incluindo, por exemplo:
+1. Serviço;
+2. Profissional;
+3. Data;
+4. Horário.
 
-- 15 minutos;
-- 30 minutos;
-- 1 hora;
-- 2 horas;
-- 2 horas e 30 minutos.
-
-O sistema deverá utilizar a duração cadastrada para calcular a disponibilidade.
-
-### Exemplo
-
-Se um serviço possui duração de 30 minutos:
-
-**15:30 → 16:00**
-
-Se outro serviço possui duração de 1 hora, ele não poderá ser iniciado às 15:00 caso exista um atendimento entre 15:30 e 16:00.
-
-O sistema deverá procurar outro horário em que o serviço possa ser realizado integralmente.
+O agendamento deverá ser validado antes de sua confirmação.
 
 ---
 
-# 9. Serviços Combinados
+## RF013 — Agendamento realizado pela profissional
 
-Serviços combinados deverão ser cadastrados como serviços próprios.
+O sistema deve permitir que a profissional realize agendamentos para clientes.
 
-### Exemplo
+---
+
+## RF014 — Consulta de agendamentos
+
+O sistema deve permitir que a cliente consulte seus próximos agendamentos.
+
+O sistema deverá permitir que profissionais e administradoras consultem os agendamentos aos quais possuem acesso de acordo com suas funções.
+
+---
+
+## RF015 — Gerenciamento de agendamentos
+
+O sistema deve permitir que profissionais e administradoras gerenciem os agendamentos de acordo com suas respectivas permissões.
+
+---
+
+# 7. Cancelamento e Reagendamento
+
+## RF016 — Cancelamento pela cliente
+
+O sistema deve permitir que a cliente cancele seus próprios agendamentos quando as condições estabelecidas para cancelamento forem atendidas.
+
+---
+
+## RF017 — Reagendamento pela cliente
+
+O sistema deve permitir que a cliente solicite o reagendamento de seus próprios atendimentos quando as condições estabelecidas forem atendidas.
+
+O novo horário deverá ser submetido novamente à validação de disponibilidade.
+
+---
+
+## RF018 — Cancelamento pela profissional
+
+O sistema deve permitir que a profissional desmarque agendamentos de acordo com suas permissões.
+
+---
+
+## RF019 — Reagendamento pela profissional
+
+O sistema deve permitir que a profissional reagende atendimentos de acordo com suas permissões.
+
+---
+
+## RF020 — Cancelamento pela administradora
+
+O sistema deve permitir que a administradora cancele agendamentos.
+
+---
+
+## RF021 — Reagendamento pela administradora
+
+O sistema deve permitir que a administradora reagende agendamentos.
+
+---
+
+# 8. Gerenciamento da Agenda
+
+## RF022 — Configuração do horário de funcionamento
+
+O sistema deve permitir que a administradora configure o horário de funcionamento do salão.
+
+O horário inicialmente previsto é das **09:00 às 21:00**.
+
+---
+
+## RF023 — Configuração dos horários de trabalho
+
+O sistema deve permitir que a administradora defina os dias e horários de trabalho das profissionais.
+
+---
+
+## RF024 — Gerenciamento de folgas
+
+O sistema deve permitir que a administradora cadastre e gerencie as folgas das profissionais.
+
+---
+
+## RF025 — Fechamento de datas
+
+O sistema deve permitir que a administradora feche uma data para novos agendamentos.
+
+---
+
+## RF026 — Abertura de datas
+
+O sistema deve permitir que a administradora reabra uma data anteriormente fechada.
+
+---
+
+## RF027 — Bloqueio de horários
+
+O sistema deve permitir que a administradora bloqueie horários específicos para novos agendamentos.
+
+---
+
+## RF028 — Liberação de horários
+
+O sistema deve permitir que a administradora libere horários anteriormente bloqueados.
+
+---
+
+## RF029 — Bloqueio da agenda de uma profissional
+
+O sistema deve permitir que a administradora bloqueie a agenda de uma profissional durante determinado período.
+
+---
+
+## RF030 — Bloqueio da agenda do salão
+
+O sistema deve permitir que a administradora bloqueie a agenda do salão durante determinado período.
+
+---
+
+## RF031 — Gerenciamento de feriados
+
+O sistema deve considerar o calendário de feriados para controle da disponibilidade da agenda.
+
+O sistema deverá permitir que a administradora configure funcionamento excepcional em feriados.
+
+---
+
+# 9. Serviços
+
+## RF032 — Associação entre profissionais e serviços
+
+O sistema deve permitir que a administradora defina quais serviços cada profissional está habilitada a realizar.
+
+Uma profissional poderá realizar vários serviços.
+
+Um mesmo serviço poderá ser realizado por várias profissionais.
+
+---
+
+## RF033 — Serviços combinados
+
+O sistema deve permitir que serviços combinados sejam cadastrados como serviços próprios.
+
+Exemplo:
 
 | Serviço | Duração |
 |---|---:|
@@ -364,19 +341,17 @@ Serviços combinados deverão ser cadastrados como serviços próprios.
 | Pé | 30 minutos |
 | Pé + Mão | 1 hora |
 
-O serviço **Pé + Mão** será tratado pelo sistema como um único serviço com duração de 1 hora.
-
-A cliente não poderá montar combinações livremente durante o agendamento.
-
-Ela deverá escolher entre os serviços previamente cadastrados pela administradora.
+A cliente deverá selecionar entre os serviços disponibilizados pelo salão, não sendo responsável por criar combinações durante o agendamento.
 
 ---
 
 # 10. Controle de Disponibilidade
 
-O sistema deverá verificar a disponibilidade antes de permitir um agendamento.
+## RF034 — Cálculo de disponibilidade
 
-O cálculo deverá considerar:
+O sistema deve calcular os horários disponíveis considerando as informações necessárias para determinar se o atendimento pode ser realizado integralmente.
+
+O cálculo deverá considerar, entre outros elementos:
 
 - Profissional;
 - Serviço;
@@ -384,55 +359,38 @@ O cálculo deverá considerar:
 - Horário;
 - Duração do serviço;
 - Agendamentos existentes;
-- Bloqueios de horários;
+- Horários bloqueados;
 - Datas fechadas;
-- Horários de trabalho da profissional;
-- Folgas da profissional.
-
-O sistema não deverá permitir sobreposição de atendimentos.
+- Horários de trabalho;
+- Folgas.
 
 ---
 
-# 11. Fechamento de Datas e Horários
+## RF035 — Apresentação de horários disponíveis
 
-A administradora poderá:
-
-- Fechar uma data inteira;
-- Abrir uma data anteriormente fechada;
-- Bloquear horários específicos;
-- Liberar horários anteriormente bloqueados;
-- Bloquear a agenda de uma profissional;
-- Bloquear a agenda do salão.
+O sistema deve apresentar à cliente os horários que estiverem disponíveis para o serviço e profissional selecionados.
 
 ---
 
-# 12. Folgas das Profissionais
+## RF036 — Próximo horário disponível
 
-A administradora poderá definir folgas das profissionais.
-
-As folgas poderão ser:
-
-- Semanais;
-- Mensais;
-- Permanentes.
-
-Os períodos definidos como folga deverão ser considerados indisponíveis para novos agendamentos.
+Quando solicitado, o sistema deverá apresentar o próximo horário disponível para realização integral do serviço.
 
 ---
 
-# 13. Feriados
+## RF037 — Consulta de calendário
 
-Por padrão, a agenda deverá permanecer fechada em feriados.
-
-A administradora poderá abrir a agenda em um feriado quando houver necessidade de funcionamento excepcional.
+O sistema deverá permitir que a cliente consulte o calendário para visualizar outros horários disponíveis.
 
 ---
 
-# 14. Status dos Agendamentos
+# 11. Atendimento
 
-O sistema deverá registrar o estado de cada atendimento.
+## RF038 — Registro do status do atendimento
 
-Entre os estados previstos estão:
+O sistema deve permitir o registro da situação do atendimento.
+
+Os estados previstos incluem:
 
 - Agendado;
 - Confirmado;
@@ -440,71 +398,50 @@ Entre os estados previstos estão:
 - Realizado;
 - Não realizado.
 
-O modelo definitivo de status poderá ser refinado durante a modelagem do banco de dados.
+---
+
+## RF039 — Registro de atendimento realizado
+
+O sistema deve permitir que profissional ou administradora registre um atendimento como realizado.
 
 ---
 
-# 15. Cancelamento e Reagendamento
+## RF040 — Registro de atendimento não realizado
 
-## 15.1 Cliente
-
-A cliente poderá cancelar ou reagendar um atendimento com antecedência mínima de 24 horas.
-
-Após esse período, a alteração deverá ser solicitada diretamente ao salão por meio do canal de comunicação disponibilizado.
+O sistema deve permitir que profissional ou administradora registre um atendimento como não realizado.
 
 ---
 
-## 15.2 Profissional
+# 12. Histórico
 
-A profissional poderá desmarcar e reagendar atendimentos conforme as permissões do seu perfil.
+## RF041 — Histórico da cliente
 
----
+O sistema deve permitir que a cliente consulte seu histórico de atendimentos.
 
-## 15.3 Administradora
-
-A administradora poderá cancelar ou reagendar atendimentos a qualquer momento.
-
-Quando a administradora cancelar um atendimento, a cliente deverá ser comunicada.
-
----
-
-# 16. WhatsApp
-
-O sistema deverá utilizar o WhatsApp como canal de comunicação com as clientes.
-
-## 16.1 Confirmação de Agendamento
-
-Após um agendamento, a cliente deverá receber uma confirmação contendo informações como:
+O histórico deverá apresentar informações como:
 
 - Data;
 - Horário;
 - Serviço;
-- Profissional.
-
-A administradora também deverá ser informada sobre o novo agendamento.
-
----
-
-## 16.2 Alteração de Agendamento
-
-Quando um atendimento for cancelado ou reagendado, a cliente deverá receber uma comunicação informando a alteração.
+- Profissional;
+- Valor;
+- Status do atendimento.
 
 ---
 
-## 16.3 Lembretes
+## RF042 — Preservação de informações históricas
 
-A cliente deverá receber:
-
-- Um lembrete 24 horas antes do atendimento;
-- Um lembrete 1 hora antes do atendimento.
+O sistema deve preservar as informações necessárias para consulta dos atendimentos realizados anteriormente, mesmo quando houver alterações posteriores nos serviços ou profissionais cadastrados.
 
 ---
 
-# 17. Promoções
+# 13. Promoções
 
-A administradora poderá cadastrar promoções para divulgação às clientes cadastradas.
+## RF043 — Cadastro de promoções
 
-Cada promoção deverá possuir informações como:
+O sistema deve permitir que a administradora cadastre promoções.
+
+Uma promoção deverá possuir informações como:
 
 - Nome ou título;
 - Descrição;
@@ -514,101 +451,211 @@ Cada promoção deverá possuir informações como:
 - Data final;
 - Status.
 
-A promoção deverá possuir período de validade.
+---
 
-A administradora poderá utilizar o sistema para enviar promoções às clientes cadastradas por meio da integração de comunicação disponível.
+## RF044 — Gerenciamento de promoções
+
+O sistema deve permitir que a administradora consulte, altere, ative ou inative promoções cadastradas.
 
 ---
 
-# 18. Relatórios
+## RF045 — Divulgação de promoções
 
-A administradora deverá possuir acesso a relatórios gerenciais.
-
-Entre os relatórios previstos estão:
-
-- Relatório diário de atendimentos;
-- Relatório mensal de atendimentos;
-- Atendimentos realizados;
-- Atendimentos não realizados;
-- Informações por profissional;
-- Informações por serviço;
-- Valores registrados;
-- Previsão financeira.
-
-Os relatórios poderão ser refinados durante a definição das regras de negócio.
+O sistema deverá permitir que a administradora utilize o canal de comunicação disponível para divulgar promoções às clientes cadastradas.
 
 ---
 
-# 19. Histórico Financeiro
+# 14. Relatórios e Informações Gerenciais
 
-O sistema deverá preservar o valor praticado no momento do atendimento.
+## RF046 — Relatório diário
 
-Alterações futuras no preço do serviço não deverão modificar registros históricos.
-
-### Exemplo
-
-Um serviço foi realizado por:
-
-**R$ 80,00**
-
-Posteriormente, o preço do serviço foi alterado para:
-
-**R$ 100,00**
-
-O atendimento anterior deverá continuar registrado como:
-
-**R$ 80,00.**
+O sistema deve permitir que a administradora consulte informações dos atendimentos de determinado dia.
 
 ---
 
-# 20. Requisitos de Segurança
+## RF047 — Relatório mensal
 
-O sistema deverá possuir autenticação e autorização.
+O sistema deve permitir que a administradora consulte informações dos atendimentos de determinado mês.
 
-O acesso às funcionalidades deverá ser controlado de acordo com as funções atribuídas à conta.
+---
 
-Uma conta poderá possuir mais de uma função.
+## RF048 — Informações por profissional
 
-### Exemplo
+O sistema deve permitir que a administradora consulte informações relacionadas aos atendimentos realizados por profissional.
 
-A dona do salão poderá possuir:
+---
 
-- Administradora;
+## RF049 — Informações por serviço
+
+O sistema deve permitir que a administradora consulte informações relacionadas aos serviços realizados.
+
+---
+
+## RF050 — Informações financeiras
+
+O sistema deve disponibilizar informações financeiras relacionadas aos atendimentos registrados.
+
+---
+
+## RF051 — Previsão financeira
+
+O sistema deverá disponibilizar informações que permitam à administradora acompanhar a previsão financeira do salão.
+
+---
+
+# 15. Comunicação por WhatsApp
+
+## RF052 — Confirmação de agendamento
+
+O sistema deverá utilizar o WhatsApp para enviar confirmação de agendamento à cliente.
+
+A comunicação deverá conter informações como:
+
+- Data;
+- Horário;
+- Serviço;
 - Profissional.
 
-Nesse caso, poderá utilizar tanto as funcionalidades administrativas quanto as funcionalidades destinadas à profissional.
+---
+
+## RF053 — Comunicação de alterações
+
+O sistema deverá utilizar o WhatsApp para comunicar à cliente alterações relacionadas ao seu agendamento, incluindo cancelamentos e reagendamentos.
 
 ---
 
-# 21. Requisitos de Interface
+## RF054 — Lembrete de agendamento
 
-A aplicação deverá ser responsiva.
+O sistema deverá utilizar o WhatsApp para enviar lembretes relacionados aos atendimentos.
 
-O sistema deverá funcionar em:
+Estão previstos:
+
+- Lembrete aproximadamente 24 horas antes;
+- Lembrete aproximadamente 1 hora antes.
+
+---
+
+## RF055 — Comunicação com a administradora
+
+O sistema deverá permitir comunicação com a administradora sobre novos agendamentos e alterações relevantes.
+
+---
+
+# 16. Segurança e Controle de Acesso
+
+## RF056 — Autenticação
+
+O sistema deve possuir mecanismo de autenticação para acesso às funcionalidades protegidas.
+
+---
+
+## RF057 — Autorização por função
+
+O sistema deve controlar o acesso às funcionalidades de acordo com as funções atribuídas à conta.
+
+---
+
+## RF058 — Acesso aos próprios dados
+
+O sistema deve permitir que a cliente consulte e altere somente seus próprios dados cadastrais.
+
+---
+
+## RF059 — Proteção das funcionalidades administrativas
+
+O sistema deve restringir funcionalidades administrativas às contas que possuam a função de administradora.
+
+---
+
+## RF060 — Acúmulo de funções
+
+O sistema deve permitir que uma mesma conta possua mais de uma função.
+
+---
+
+# 17. Interface e Acesso
+
+## RF061 — Interface responsiva
+
+O sistema deve possuir interface responsiva e funcionar adequadamente em:
 
 - Celulares;
 - Tablets;
 - Computadores.
 
-A interface deverá priorizar a utilização em dispositivos móveis, especialmente para o fluxo de agendamento das clientes.
+---
 
-A cliente deverá conseguir acessar o sistema por meio de um link recebido, inclusive através do WhatsApp.
+## RF062 — Acesso por link
 
-Não será necessária a instalação de um aplicativo mobile para utilização do sistema.
+O sistema deve permitir que a cliente acesse a aplicação por meio de um link.
 
 ---
 
-# 22. Requisitos Técnicos
+## RF063 — Acesso pelo WhatsApp
 
-A solução será desenvolvida inicialmente utilizando:
+O sistema deve permitir que links de acesso à aplicação sejam utilizados nas comunicações enviadas pelo WhatsApp.
 
-### Frontend
+---
+
+## RF064 — Utilização sem instalação
+
+O sistema deverá ser utilizável sem a necessidade de instalação de um aplicativo mobile.
+
+---
+
+# 18. Requisitos Não Funcionais
+
+## RNF001 — Responsividade
+
+A aplicação deverá possuir interface responsiva, adaptando-se aos diferentes tamanhos de tela.
+
+---
+
+## RNF002 — API REST
+
+A comunicação entre frontend e backend deverá utilizar uma API REST.
+
+---
+
+## RNF003 — Segurança
+
+O sistema deverá proteger os dados dos usuários e controlar o acesso às funcionalidades de acordo com as funções atribuídas.
+
+---
+
+## RNF004 — Integridade dos agendamentos
+
+O sistema deverá evitar conflitos de horários e garantir que somente horários válidos sejam disponibilizados para novos agendamentos.
+
+---
+
+## RNF005 — Preservação do histórico
+
+O sistema deverá preservar informações históricas necessárias para consulta dos atendimentos.
+
+---
+
+## RNF006 — Testabilidade
+
+A aplicação deverá possuir estrutura que permita a realização de testes automatizados e testes de API.
+
+---
+
+# 19. Requisitos Técnicos
+
+## RT001 — Frontend
+
+A aplicação frontend será desenvolvida utilizando:
 
 - React;
 - TypeScript;
 - Vite.
 
-### Backend
+---
+
+## RT002 — Backend
+
+A aplicação backend será desenvolvida utilizando:
 
 - Java;
 - Spring Boot;
@@ -617,56 +664,54 @@ A solução será desenvolvida inicialmente utilizando:
 - Hibernate;
 - JWT.
 
-### Banco de Dados
+---
+
+## RT003 — Banco de Dados
+
+O sistema utilizará:
 
 - MySQL.
 
-### Testes
+---
+
+## RT004 — Testes
+
+Serão utilizadas ferramentas e tecnologias como:
 
 - JUnit;
 - Mockito;
 - Postman.
 
-### Versionamento
+---
+
+## RT005 — Versionamento
+
+O projeto utilizará:
 
 - Git;
 - GitHub.
 
 ---
 
-# 23. Integrações
+# 20. Integrações
 
-O sistema deverá possuir integração com o WhatsApp para comunicação com clientes.
+## RI001 — Integração com WhatsApp
 
-A implementação específica da integração será definida durante a etapa de desenvolvimento, considerando a solução de API escolhida e suas regras de utilização.
+O sistema deverá possuir integração com o WhatsApp para comunicação relacionada aos agendamentos e divulgação de promoções.
 
----
-
-# 24. Requisitos Não Funcionais
-
-O sistema deverá:
-
-- Possuir interface responsiva;
-- Possuir controle de acesso por função;
-- Proteger os dados dos usuários;
-- Evitar conflitos de agendamento;
-- Manter histórico dos atendimentos;
-- Manter os valores históricos dos serviços;
-- Permitir manutenção dos serviços e profissionais sem apagar informações históricas;
-- Possuir estrutura preparada para testes automatizados;
-- Utilizar API REST para comunicação entre frontend e backend.
+A solução técnica específica para a integração será definida durante a etapa de desenvolvimento.
 
 ---
 
-# 25. Escopo Inicial
+# 21. Escopo Inicial
 
 A primeira versão do sistema deverá contemplar:
 
 - Cadastro e login de clientes;
 - Cadastro e login de profissionais;
 - Acesso administrativo;
-- Cadastro e gerenciamento de profissionais;
-- Cadastro e gerenciamento de serviços;
+- Gerenciamento de profissionais;
+- Gerenciamento de serviços;
 - Controle de preços;
 - Controle de duração dos serviços;
 - Controle de disponibilidade;
@@ -676,22 +721,25 @@ A primeira versão do sistema deverá contemplar:
 - Histórico de atendimentos;
 - Registro de atendimentos realizados e não realizados;
 - Relatórios básicos;
+- Informações financeiras;
 - Previsão financeira;
-- Notificações por WhatsApp;
-- Cadastro de promoções.
+- Comunicação por WhatsApp;
+- Cadastro e gerenciamento de promoções.
 
 ---
 
-# 26. Evolução do Projeto
+# 22. Rastreabilidade
 
-Os requisitos poderão ser refinados durante as etapas de análise, modelagem, desenvolvimento e testes.
+Os requisitos deverão manter rastreabilidade durante as etapas de desenvolvimento do projeto.
 
-Alterações deverão ser documentadas para manter a rastreabilidade entre:
+A relação deverá ser mantida entre:
 
-**Requisitos → Regras de Negócio → Modelagem → Implementação → Testes.**
+**Requisitos → Regras de Negócio → Casos de Uso → Modelagem → Implementação → Testes**
+
+Alterações nos requisitos deverão ser documentadas para evitar inconsistências entre a especificação e o sistema implementado.
 
 ---
 
 ## 📌 Observação
 
-Este documento representa o levantamento inicial de requisitos do sistema **Beleza Fácil** e poderá ser atualizado conforme novas necessidades do negócio sejam identificadas e validadas.
+Este documento representa a especificação dos requisitos do sistema **Beleza Fácil** e poderá ser atualizado conforme as necessidades do negócio forem refinadas e validadas durante as etapas de análise, modelagem, desenvolvimento e testes.
