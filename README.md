@@ -547,7 +547,9 @@ BelezaFacil/
 │   ├── casos-de-uso.md
 │   ├── modelagem.md
 │   ├── arquitetura.md
+│   │
 │   └── imagens/
+│       ├── esboco-inicial.png
 │       ├── fluxograma.png
 │       └── arquitetura.png
 │
