@@ -2,11 +2,13 @@
 
 ![Status](https://img.shields.io/badge/Status-Em%20Desenvolvimento-green?style=for-the-badge)
 
-O **Beleza Fácil** é um sistema web de agendamento desenvolvido para facilitar o gerenciamento de salões de beleza e proporcionar uma experiência simples para clientes, profissionais e administradores.
+O **Beleza Fácil**é um sistema web de agendamento desenvolvido para facilitar o gerenciamento de salões de beleza e proporcionar uma experiência simples para clientes, profissionais e administradores.
+
+Cada estabelecimento poderá configurar suas próprias informações e identidade, como nome, logotipo, endereço, telefone, horários de funcionamento, serviços e profissionais, permitindo que o sistema se adapte às características de cada salão.
 
 A cliente poderá acessar o sistema por meio de um link, criar sua conta, consultar os serviços disponíveis, escolher uma profissional, selecionar uma data e horário e acompanhar seus agendamentos.
 
-O sistema também contará com integração com o **WhatsApp** para envio de confirmações, lembretes e comunicações relacionadas aos agendamentos.
+O sistema também contará com integração com o WhatsApp para envio de confirmações, lembretes e comunicações relacionadas aos agendamentos.
 
 ---
 
