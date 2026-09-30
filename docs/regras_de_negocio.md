@@ -36,15 +36,18 @@ O Beleza Fácil deverá permitir:
 - Que a administradora gerencie agendamentos;
 - Que sejam enviados avisos e lembretes por WhatsApp;
 - Que a administradora tenha acesso a informações e relatórios do estabelecimento;
-- Que a administradora cadastre e divulgue promoções.
+- Que a administradora cadastre e divulgue promoções;
+- Que os registros históricos sejam preservados de forma íntegra.
 
 ---
 
 # 3. Estabelecimento
 
-O sistema deverá permitir que cada estabelecimento possua seus próprios dados, configurações e informações operacionais.
+O sistema deverá permitir que diferentes estabelecimentos utilizem o Beleza Fácil de forma independente.
 
-Cada estabelecimento deverá possuir, no mínimo, informações como:
+Cada estabelecimento deverá possuir seus próprios dados, configurações e informações operacionais.
+
+Cada estabelecimento poderá possuir:
 
 - Nome;
 - Logotipo;
@@ -59,7 +62,7 @@ Cada estabelecimento deverá possuir, no mínimo, informações como:
 - Promoções;
 - Configurações de disponibilidade.
 
-As informações de cada estabelecimento deverão ser independentes das informações de outros estabelecimentos cadastrados no sistema.
+Os dados de cada estabelecimento deverão permanecer separados dos dados dos demais estabelecimentos.
 
 ---
 
@@ -156,7 +159,9 @@ O cadastro deverá permitir informações como:
 
 O e-mail será opcional.
 
-A conta da cliente deverá estar vinculada ao estabelecimento no qual ela realizar seu cadastro ou utilizar o sistema, conforme definição da implementação.
+A conta da cliente deverá ser única no sistema.
+
+Uma mesma cliente poderá utilizar sua conta para realizar agendamentos em diferentes estabelecimentos.
 
 ---
 
@@ -180,7 +185,7 @@ O sistema deverá permitir que a cliente altere seus próprios dados cadastrais,
 
 ### RF004 — Consulta de serviços
 
-O sistema deverá permitir que a cliente consulte os serviços disponibilizados pelo estabelecimento.
+O sistema deverá permitir que a cliente consulte os serviços disponibilizados pelo estabelecimento no qual estiver realizando o agendamento.
 
 ---
 
@@ -244,15 +249,17 @@ O sistema deverá permitir que a cliente cancele seus próprios agendamentos, re
 
 ### RF010 — Reagendamento
 
-O sistema deverá permitir que a cliente solicite ou realize o reagendamento de seus próprios atendimentos, respeitando as regras estabelecidas.
+O sistema deverá permitir que a cliente realize o reagendamento de seus próprios atendimentos, respeitando as regras estabelecidas.
 
 ---
 
 ### RF011 — Histórico de atendimentos
 
-O sistema deverá permitir que a cliente consulte seu histórico de atendimentos realizados.
+O sistema deverá permitir que a cliente consulte seu histórico de atendimentos.
 
-O histórico deverá preservar as informações necessárias para consulta posterior.
+O histórico deverá apresentar somente os registros relacionados aos estabelecimentos nos quais a cliente possui ou tenha possuído atendimentos.
+
+Um estabelecimento não poderá consultar o histórico de atendimentos da cliente realizado em outro estabelecimento.
 
 ---
 
@@ -272,7 +279,7 @@ A profissional poderá visualizar a agenda das profissionais do estabelecimento 
 
 ### RF014 — Agendamento para cliente
 
-O sistema deverá permitir que a profissional realize agendamentos para clientes.
+O sistema deverá permitir que a profissional realize agendamentos para clientes do estabelecimento.
 
 ---
 
@@ -312,8 +319,10 @@ A administradora poderá:
 - Cadastrar profissionais;
 - Alterar dados das profissionais;
 - Ativar profissionais;
-- Desativar profissionais;
+- Inativar profissionais;
 - Definir os serviços que cada profissional poderá realizar.
+
+A inativação de uma profissional não deverá apagar os registros históricos de atendimentos realizados por ela.
 
 ---
 
@@ -324,23 +333,27 @@ A administradora poderá:
 - Cadastrar serviços;
 - Alterar serviços;
 - Ativar serviços;
-- Desativar serviços;
+- Inativar serviços;
 - Definir preços;
 - Definir duração.
+
+A inativação de um serviço não deverá apagar os registros históricos relacionados a atendimentos anteriores.
 
 ---
 
 ### RF021 — Gerenciamento de preços
 
-O sistema deverá permitir que a administradora configure os preços dos serviços.
+O sistema deverá permitir que a administradora configure e altere os preços dos serviços.
 
-Alterações de preço não deverão apagar os valores históricos já utilizados em atendimentos anteriores.
+Alterações de preço não deverão apagar ou modificar indevidamente os valores registrados em atendimentos anteriores.
 
 ---
 
 ### RF022 — Gerenciamento da duração dos serviços
 
 A administradora poderá definir ou alterar a duração dos serviços disponibilizados pelo estabelecimento.
+
+Alterações posteriores na duração não deverão modificar indevidamente os registros históricos de atendimentos já realizados.
 
 ---
 
@@ -465,13 +478,32 @@ O sistema deverá permitir o registro do resultado do atendimento como:
 
 O sistema deverá preservar os dados dos atendimentos realizados para consulta futura.
 
-O histórico deverá manter informações relevantes, incluindo os valores utilizados no momento do atendimento.
+O histórico deverá manter informações relevantes, incluindo:
+
+- Estabelecimento;
+- Cliente;
+- Profissional;
+- Serviço;
+- Data;
+- Horário;
+- Status;
+- Valor registrado no momento do atendimento.
+
+Alterações posteriores em serviços, preços, profissionais ou configurações não deverão modificar indevidamente os dados históricos.
+
+---
+
+### RF037 — Preservação dos valores históricos
+
+O sistema deverá preservar o valor associado ao atendimento realizado no momento em que o atendimento ocorreu.
+
+Por exemplo, caso um serviço custasse R$ 50,00 no momento do atendimento e posteriormente passe a custar R$ 60,00, o histórico do atendimento anterior deverá continuar registrando R$ 50,00.
 
 ---
 
 # 11. Promoções
 
-### RF037 — Cadastro de promoção
+### RF038 — Cadastro de promoção
 
 A administradora poderá cadastrar promoções contendo informações como:
 
@@ -485,18 +517,18 @@ A administradora poderá cadastrar promoções contendo informações como:
 
 ---
 
-### RF038 — Gerenciamento de promoção
+### RF039 — Gerenciamento de promoção
 
 A administradora poderá:
 
 - Criar promoções;
 - Alterar promoções;
 - Ativar promoções;
-- Desativar promoções.
+- Inativar promoções.
 
 ---
 
-### RF039 — Divulgação de promoções
+### RF040 — Divulgação de promoções
 
 O sistema deverá permitir a divulgação das promoções por meio dos canais de comunicação disponíveis, incluindo integração com WhatsApp quando aplicável.
 
@@ -504,37 +536,37 @@ O sistema deverá permitir a divulgação das promoções por meio dos canais de
 
 # 12. Relatórios e Informações Gerenciais
 
-### RF040 — Relatório de agendamentos
+### RF041 — Relatório de agendamentos
 
 O sistema deverá permitir consultar os agendamentos do estabelecimento.
 
 ---
 
-### RF041 — Relatório por período
+### RF042 — Relatório por período
 
 O sistema deverá permitir consultar informações de agendamentos por período.
 
 ---
 
-### RF042 — Relatório por profissional
+### RF043 — Relatório por profissional
 
 O sistema deverá permitir consultar informações relacionadas aos atendimentos realizados por profissional.
 
 ---
 
-### RF043 — Relatório por serviço
+### RF044 — Relatório por serviço
 
 O sistema deverá permitir consultar informações relacionadas aos serviços realizados.
 
 ---
 
-### RF044 — Registro de valores
+### RF045 — Registro de valores
 
 O sistema deverá permitir consultar os valores associados aos atendimentos realizados.
 
 ---
 
-### RF045 — Previsão financeira
+### RF046 — Previsão financeira
 
 O sistema deverá permitir apresentar informações que auxiliem na previsão financeira do estabelecimento.
 
@@ -542,13 +574,13 @@ O sistema deverá permitir apresentar informações que auxiliem na previsão fi
 
 # 13. Comunicação por WhatsApp
 
-### RF046 — Confirmação de agendamento
+### RF047 — Confirmação de agendamento
 
 O sistema deverá permitir o envio de confirmação de agendamento por WhatsApp, quando a integração estiver disponível.
 
 ---
 
-### RF047 — Lembrete de atendimento
+### RF048 — Lembrete de atendimento
 
 O sistema deverá permitir o envio de lembretes de atendimento por WhatsApp.
 
@@ -559,13 +591,13 @@ Os lembretes deverão considerar, inicialmente:
 
 ---
 
-### RF048 — Comunicação sobre alterações
+### RF049 — Comunicação sobre alterações
 
 O sistema deverá permitir o envio de comunicações relacionadas a alterações ou cancelamentos de agendamentos.
 
 ---
 
-### RF049 — Divulgação de promoções
+### RF050 — Divulgação de promoções
 
 O sistema poderá utilizar a integração com WhatsApp para divulgação de promoções do estabelecimento, respeitando as regras da integração utilizada.
 
@@ -573,39 +605,45 @@ O sistema poderá utilizar a integração com WhatsApp para divulgação de prom
 
 # 14. Segurança e Controle de Acesso
 
-### RF050 — Autenticação
+### RF051 — Autenticação
 
 O sistema deverá possuir mecanismo de autenticação para acesso às áreas restritas.
 
 ---
 
-### RF051 — Autorização por função
+### RF052 — Autorização por função
 
 O sistema deverá controlar o acesso às funcionalidades conforme a função atribuída à conta.
 
 ---
 
-### RF052 — Controle de acesso por estabelecimento
+### RF053 — Controle de acesso por estabelecimento
 
-O sistema deverá garantir que usuários administrativos tenham acesso somente às informações e funcionalidades do estabelecimento ao qual estão vinculados.
+O sistema deverá garantir que usuários administrativos e profissionais tenham acesso somente às informações e funcionalidades permitidas dentro dos estabelecimentos aos quais estiverem vinculados.
 
 ---
 
-### RF053 — Proteção dos dados
+### RF054 — Proteção dos dados
 
 O sistema deverá impedir acesso não autorizado aos dados dos usuários e dos estabelecimentos.
 
 ---
 
-### RF054 — Controle de múltiplas funções
+### RF055 — Controle de múltiplas funções
 
 Uma mesma conta poderá possuir mais de uma função, devendo o sistema aplicar as permissões correspondentes a cada função.
 
 ---
 
+### RF056 — Privacidade entre estabelecimentos
+
+O sistema deverá impedir que um estabelecimento consulte informações de uma cliente relacionadas a outro estabelecimento.
+
+---
+
 # 15. Interface e Acesso
 
-### RF055 — Interface responsiva
+### RF057 — Interface responsiva
 
 A aplicação deverá funcionar em:
 
@@ -615,19 +653,19 @@ A aplicação deverá funcionar em:
 
 ---
 
-### RF056 — Acesso por link
+### RF058 — Acesso por link
 
 A cliente deverá poder acessar o sistema por meio de um link disponibilizado pelo estabelecimento.
 
 ---
 
-### RF057 — Interface personalizada por estabelecimento
+### RF059 — Interface personalizada por estabelecimento
 
 A área pública do sistema deverá apresentar, quando aplicável, as informações e identidade visual configuradas pelo estabelecimento.
 
 ---
 
-### RF058 — Acesso sem instalação de aplicativo
+### RF060 — Acesso sem instalação de aplicativo
 
 A cliente deverá poder utilizar o sistema por meio do navegador, sem necessidade de instalação de aplicativo mobile.
 
@@ -671,7 +709,13 @@ Os dados pertencentes a um estabelecimento não deverão ser disponibilizados in
 
 ---
 
-### RNF007 — Testabilidade
+### RNF007 — Integridade dos registros históricos
+
+Alterações realizadas posteriormente no cadastro de serviços, profissionais, preços ou configurações não deverão comprometer a integridade dos registros históricos.
+
+---
+
+### RNF008 — Testabilidade
 
 A aplicação deverá possuir estrutura que permita a realização de testes automatizados e testes de API.
 
@@ -744,6 +788,8 @@ A solução técnica específica da integração será definida durante a etapa 
 A primeira versão do sistema deverá contemplar:
 
 - Cadastro e login de clientes;
+- Conta única de cliente no sistema;
+- Relacionamento da cliente com diferentes estabelecimentos;
 - Cadastro e login de profissionais;
 - Acesso administrativo;
 - Cadastro e gerenciamento de estabelecimentos;
@@ -751,21 +797,24 @@ A primeira versão do sistema deverá contemplar:
 - Configuração da identidade visual do estabelecimento;
 - Gerenciamento de profissionais;
 - Gerenciamento de serviços;
+- Associação entre profissionais e serviços;
 - Controle de preços;
 - Controle de duração dos serviços;
-- Associação entre profissionais e serviços;
 - Controle de disponibilidade;
 - Agendamentos;
 - Cancelamentos;
 - Reagendamentos;
 - Histórico de atendimentos;
+- Preservação dos valores históricos;
+- Inativação de profissionais e serviços sem perda do histórico;
 - Registro de atendimentos realizados e não realizados;
 - Relatórios básicos;
 - Previsão financeira;
 - Notificações por WhatsApp;
 - Cadastro de promoções;
 - Controle de acesso por função;
-- Controle de acesso por estabelecimento.
+- Controle de acesso por estabelecimento;
+- Isolamento das informações entre estabelecimentos.
 
 ---
 
