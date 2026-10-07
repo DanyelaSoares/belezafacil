@@ -36,5 +36,9 @@ public class EstabelecimentoController {
 
         return service.atualizar(id, dados);
     }
+    @PatchMapping("/{id}/inativar")
+    public Estabelecimento inativar(@PathVariable Long id) {
+        return service.inativar(id);
+    }
 
 }
