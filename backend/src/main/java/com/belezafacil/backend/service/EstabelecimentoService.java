@@ -22,4 +22,8 @@ public class EstabelecimentoService {
     public List<Estabelecimento> listarTodos() {
         return repository.findAll();
     }
+
+    public Estabelecimento buscarPorId(Long id) {
+        return repository.findById(id).orElse(null);
+    }
 }
