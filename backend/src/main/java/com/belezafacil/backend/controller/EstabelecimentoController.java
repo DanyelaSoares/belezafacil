@@ -29,4 +29,12 @@ public class EstabelecimentoController {
         return service.buscarPorId(id);
     }
 
+    @PutMapping("/{id}")
+    public Estabelecimento atualizar(
+            @PathVariable Long id,
+            @RequestBody Estabelecimento dados) {
+
+        return service.atualizar(id, dados);
+    }
+
 }
