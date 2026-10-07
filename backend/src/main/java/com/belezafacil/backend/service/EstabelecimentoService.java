@@ -1,9 +1,8 @@
 package com.belezafacil.backend.service;
-
+import com.belezafacil.backend.exception.EstabelecimentoNaoEncontradoException;
 import com.belezafacil.backend.entity.Estabelecimento;
 import com.belezafacil.backend.repository.EstabelecimentoRepository;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 
 @Service
@@ -24,6 +23,7 @@ public class EstabelecimentoService {
     }
 
     public Estabelecimento buscarPorId(Long id) {
-        return repository.findById(id).orElse(null);
+        return repository.findById(id)
+                .orElseThrow(() -> new EstabelecimentoNaoEncontradoException(id));
     }
 }
