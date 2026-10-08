@@ -48,4 +48,12 @@ public class EstabelecimentoService {
 
         return repository.save(estabelecimento);
     }
+    public Estabelecimento ativar(Long id) {
+        Estabelecimento estabelecimento = repository.findById(id)
+                .orElseThrow(() -> new EstabelecimentoNaoEncontradoException(id));
+
+        estabelecimento.setAtivo(true);
+
+        return repository.save(estabelecimento);
+    }
 }
