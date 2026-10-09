@@ -1,3 +1,4 @@
+
 package com.belezafacil.backend.controller;
 
 import com.belezafacil.backend.entity.Cliente;
@@ -25,5 +26,10 @@ public class ClienteController {
     @GetMapping
     public List<Cliente> listarTodos() {
         return service.listarTodos();
+    }
+
+    @GetMapping("/{id}")
+    public Cliente buscarPorId(@PathVariable Long id) {
+        return service.buscarPorId(id);
     }
 }

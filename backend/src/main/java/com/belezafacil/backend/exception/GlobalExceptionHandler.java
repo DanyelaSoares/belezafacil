@@ -13,4 +13,10 @@ public class GlobalExceptionHandler {
 
         return ResponseEntity.notFound().build();
     }
+    @ExceptionHandler(ClienteNaoEncontradoException.class)
+    public ResponseEntity<Void> tratarClienteNaoEncontrado(
+            ClienteNaoEncontradoException exception) {
+
+        return ResponseEntity.notFound().build();
+    }
 }
