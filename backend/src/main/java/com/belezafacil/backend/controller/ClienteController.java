@@ -1,11 +1,9 @@
-
 package com.belezafacil.backend.controller;
 
 import com.belezafacil.backend.entity.Cliente;
 import com.belezafacil.backend.service.ClienteService;
-import org.springframework.web.bind.annotation.*;
 import jakarta.validation.Valid;
-
+import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
@@ -31,5 +29,13 @@ public class ClienteController {
     @GetMapping("/{id}")
     public Cliente buscarPorId(@PathVariable Long id) {
         return service.buscarPorId(id);
+    }
+
+    @PutMapping("/{id}")
+    public Cliente atualizar(
+            @PathVariable Long id,
+            @Valid @RequestBody Cliente dados) {
+
+        return service.atualizar(id, dados);
     }
 }
