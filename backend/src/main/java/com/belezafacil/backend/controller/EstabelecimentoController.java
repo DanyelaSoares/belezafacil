@@ -1,8 +1,11 @@
+
 package com.belezafacil.backend.controller;
 
 import com.belezafacil.backend.entity.Estabelecimento;
 import com.belezafacil.backend.service.EstabelecimentoService;
+import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;
+
 import java.util.List;
 
 @RestController
@@ -16,7 +19,8 @@ public class EstabelecimentoController {
     }
 
     @PostMapping
-    public Estabelecimento salvar(@RequestBody Estabelecimento estabelecimento) {
+    public Estabelecimento salvar(
+            @Valid @RequestBody Estabelecimento estabelecimento) {
         return service.salvar(estabelecimento);
     }
 
@@ -24,6 +28,7 @@ public class EstabelecimentoController {
     public List<Estabelecimento> listarTodos() {
         return service.listarTodos();
     }
+
     @GetMapping("/{id}")
     public Estabelecimento buscarPorId(@PathVariable Long id) {
         return service.buscarPorId(id);
@@ -32,17 +37,17 @@ public class EstabelecimentoController {
     @PutMapping("/{id}")
     public Estabelecimento atualizar(
             @PathVariable Long id,
-            @RequestBody Estabelecimento dados) {
-
+            @Valid @RequestBody Estabelecimento dados) {
         return service.atualizar(id, dados);
     }
+
     @PatchMapping("/{id}/inativar")
     public Estabelecimento inativar(@PathVariable Long id) {
         return service.inativar(id);
     }
+
     @PatchMapping("/{id}/ativar")
     public Estabelecimento ativar(@PathVariable Long id) {
         return service.ativar(id);
     }
-
 }
